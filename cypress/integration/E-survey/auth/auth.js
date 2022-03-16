@@ -25,11 +25,11 @@ describe('example to-do app', () => {
   it('displays two todo items by default', () => {
     cy.get('.btn').click()
     cy.get(':nth-child(1) > .form-control').type('admin')
+    cy.get(':nth-child(2) > .form-control').type(1)
+    cy.get('.btn-md').click()
 
-
+    
   })
 
- 
-
-
 })
+
