@@ -64,7 +64,7 @@ describe('login-as-applicant-EIIN', () => {
     //Institute Information
     cy.get(':nth-child(20) > :nth-child(1) > .form-control').select('3').should('have.value' ,'3')
     cy.get(':nth-child(21) > :nth-child(1) > .form-control').select('2').should('have.value' ,'2')
-    cy.get(':nth-child(21) > :nth-child(1) > .form-control').type('2')
+    cy.get(':nth-child(22) > .form-control').type('2')
     cy.get('label.ml-5 > input').first().check()
     cy.get(':nth-child(24) > :nth-child(1) > .form-control').select('258').should('have.value' ,'258')
     cy.get(':nth-child(25) > :nth-child(1) > .form-control').select('4').should('have.value' ,'4')
