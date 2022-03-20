@@ -21,11 +21,11 @@ describe('login-as-applicant-EIIN', () => {
     cy.visit('http://192.168.1.15:8005/')
     cy.viewport(1024, 1080)
     
-  
+    
   })
  
   //login
-  it('login to EIIN', () => {
+  it.only('login to EIIN', () => {
     cy.get('[href="/login"] > .btn').click()
     cy.wait(2000)
     cy.get(':nth-child(1) > .form-control', {timeout: 5000}).type("mitu{enter}")
