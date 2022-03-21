@@ -1,37 +1,25 @@
 import React from 'react';
 
  <reference types="cypress" />
+ import {applicantUser} from "./page-objects/applicant-page-objects"
 
-// Welcome to Cypress!
-//
-// This spec file contains a variety of sample tests
-// for a todo list app that are designed to demonstrate
-// the power of writing tests in Cypress.
-// To learn more about how Cypress works and
-// what makes it such an awesome testing tool,
-// please read our getting started guide:
 // https://on.cypress.io/introduction-to-cypress
 
 describe('login-as-applicant-EIIN', () => {
+  const user = new applicantUser()
+
   beforeEach(() => {
-    // Cypress starts out with a blank slate for each test
-    // so we must tell it to visit our website with the `cy.visit()` command.
-    // Since we want to visit the same URL at the start of all our tests,
     // we include it in our beforeEach function so that it runs before each test
-    cy.visit('http://192.168.1.15:8005/')
-    cy.viewport(1024, 1080)
     
-    
+    user.navigate()
+        
   })
  
   //login
   it.only('login to EIIN', () => {
-    cy.get('[href="/login"] > .btn').click()
-    cy.wait(2000)
-    cy.get(':nth-child(1) > .form-control', {timeout: 5000}).type("mitu{enter}")
-    cy.get(':nth-child(2) > .form-control').type(123)
-    cy.get('.btn-md').click()
-    cy.wait(2000)
+    
+    user.logInEIIN('mitu',123)
+
   })
 
   //Apply for EIIN
